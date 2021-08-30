@@ -1,0 +1,14 @@
+name: Create Project
+on:
+  workflow_dispatch:
+    inputs:
+      description:
+        description: 'Project Description'
+        required: true
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Creating repo ${{ github.event.repository.name }} with ${{ github.event.inputs.description }}!"
